@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<unistd.h>
+
+int main()
+{
+    int fd[2], ret;
+    char str1[30], str2[30];
+    ret = pipe(fd);
+    if (ret < 0)
+    {
+        perror("pipe() failed!\n");
+        _exit(0);
+    }
+    printf("Enter the string: ");
+    scanf("%[^\n]s", str1);
+    write(fd[1], str1, sizeof(str1));
+    read(fd[0], str2, sizeof(str2));
+    printf("Receiver: %s\n", str2);
+    close(fd[1]);
+    close(fd[0]);
+    return 0;
+}
