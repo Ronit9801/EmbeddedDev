@@ -3,10 +3,10 @@
 
 int main()
 {
-    int fd[2], ret;
+    int fd[2], id;
     char str1[30], str2[30];
-    ret = pipe(fd);
-    if (ret < 0)
+    id = pipe(fd);
+    if (id < 0)
     {
         perror("pipe() failed!\n");
         _exit(0);
