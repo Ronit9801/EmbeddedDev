@@ -4,7 +4,7 @@
 int main()
 {
     char ch[30];
-    short int shift, i=0, len;
+    short int shift, i=0, len, j;
     printf("Enter the text to encrypt: ");
     scanf("%[^\n]s",ch);
     len = strlen(ch);
@@ -23,7 +23,7 @@ int main()
         i++;
     } while (ch[i] != '\0');
     printf("Encrypted text: ");
-    for (int j = 0; j < len; j++)
+    for (j = 0; j < len; j++)
     {
         printf("%c", ch[j]);   
     }
